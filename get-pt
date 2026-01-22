@@ -7,4 +7,10 @@ sudo mkdir /etc/portage/package.license/
 echo "gui-apps/packettracer ~amd64" | sudo tee -a /etc/portage/package.accept_keywords/packettracer
 echo "gui-apps/packettracer Cisco" | sudo tee /etc/portage/package.license/packettracer
 sudo emerge -q gui-apps/packettracer dev-qt/qtnetworkauth dev-libs/libxml2-compat
+export LD_LIBRARY_PATH="/opt/pt/bin:/usr/lib:${LD_LIBRARY_PATH}"
+ehco "youll might need to add to your shell rc"
+sudo rm /usr/bin/packettracer
+sudo cp /opt/pt/packettracer /usr/bin/
+
+
 
