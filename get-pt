@@ -1,4 +1,4 @@
-sudo emerge app-eselect/eselect-repository wget
+sudo emerge -q app-eselect/eselect-repository wget
 sudo eselect repository enable guru
 sudo emerge --sync
 wget https://archive.org/download/cpt822/CiscoPacketTracer822_amd64_signed.deb
@@ -6,5 +6,5 @@ sudo mv CiscoPacketTracer822_amd64_signed.deb /var/cache/distfiles/Packet_Tracer
 sudo mkdir /etc/portage/package.license/
 echo "gui-apps/packettracer ~amd64" | sudo tee -a /etc/portage/package.accept_keywords/packettracer
 echo "gui-apps/packettracer Cisco" | sudo tee /etc/portage/package.license/packettracer
-sudo emerge -aq gui-apps/packettracer dev-qt/qtnetworkauth dev-libs/libxml2-compat
+sudo emerge -q gui-apps/packettracer dev-qt/qtnetworkauth dev-libs/libxml2-compat
 
